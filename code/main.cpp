@@ -27,7 +27,10 @@ using namespace sf;
 
 int main()
 {
-	RenderWindow windows(VideoMode(800,600), "Borosa");
+	RenderWindow window(VideoMode(800,600), "SFML - Template project");
+
+	window.setVerticalSyncEnabled(true);
+
 	
 	bool exit = false;
 
@@ -35,7 +38,7 @@ int main()
 	{
 		Event event;
 
-		while (windows.pollEvent(event))
+		while (window.pollEvent(event))
 		{
 			switch (event.type)
 			{
@@ -46,7 +49,9 @@ int main()
 				}
 			}
 			
-			windows.display();
+			window.clear();
+
+			window.display();
 		}
 
 	} while (!exit);
